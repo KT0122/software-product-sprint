@@ -15,19 +15,44 @@
 package com.google.sps.servlets;
 
 import java.io.IOException;
+import com.google.gson.Gson;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
+  List<String> dataList = new ArrayList<String>() {{
+    add("Temp1");
+    add("Temp2");
+    add("Temp3");
+  }};
+
+  
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setContentType("text/html;");
     response.getWriter().println("<h1>Hello Khalil!</h1>");
     response.getWriter().println("<h1>This is temporary</h1>");
+
+    response.setContentType("text/html;");
+    response.getWriter().println(convertToJson(dataList));
+  }
+
+  private String convertToJson(List<String> list){
+      String json = " { ";
+      json += "\"Temp1\": ";
+      json += "\"" + list.get(1) + "\"";
+      json += "\"Temp2\": ";
+      json += "\"" + list.get(1) + "\"";
+      json += "\"Temp3\": "; 
+      json += "\"" + list.get(2) + "\"";
+      json += "}";
+      return json;
   }
 }
