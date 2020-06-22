@@ -1,18 +1,78 @@
 <!DOCTYPE html>
 <html>
+  <style>
+  body {
+    
+    background-color: white;
+    color: black;
+    
+    }
+
+  .dark-mode {
+    background-color: black;
+    color: white;
+    }
+  </style> 
+
   <head>
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+
+    <title>Hello Google Maps</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaKm8WOqhpNI5g3w2-7gmXufQOy0PmYZU"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
+
   <body>
+    <h2>Toggle Dark/Light Mode</h2>
+    <p>Click the button to toggle between dark and light mode for this page.</p>
+
+    <button onclick="darkModeFunction()">Toggle dark mode</button>  
+     
     <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
+      <h1>Khalil's Portfolio</h1>
+      <p>This is my portfolio. There maybe others like it but this one is mine</p>
+      <p>Click here to see some data that needs to be changed later:</p>
+      <button onclick="getData()">Fetch data!</button>
+      <div id="data-container"></div>
+
       <p>Click here to get a random message:</p>
       <button onclick="addRandomGreeting()">Hello</button>
       <div id="greeting-container"></div>
+
+      <img src="images/ThatLastCaptainsDinner.jpg" width="500" height="600"/>
+      <h2>Who am I?</h2>
+      <p>I was born in the Dominican Republic back in 2001 and lived there until I was in the second grade when I moved to\
+           New York. I lived in and went to school in Queens till I was in Highschool, where I still lived in Queens but 
+           went to school in Harlem right at the end of the 3 train line. It was there that I fell in love with 
+           Computer Science, I learned how to lead, and I began this chapter of my life</p>     
+
+      <h3>Notable projects</h3>
+      <p>TinkoNaut: 2019 robot for frc robotics team Harlem Knights. 
+          Worked on general controls and testing of new technology and later on automatic featurs and pid loop tuning.</p>
+      <p>TinkoKong: 2018 robot for frc robotics team Harlem Knights. 
+          Worked on helping newer members of programming learn and programmed use 
+          of various utility electronics and sensors.</p> 
+      <p>Classroom aid: A small Classroom aid for Chelsey Roebuck of 
+          Elite meant to be used in his classes for the Boys and Girl club. 
+          Also counted as the final project for College Engineering</p>
+
+      <h4>Links</h4>
+      <p><a href="https://github.com/KT0122">github</a></p>
+      <p><a href="www.linkedin.com/in/khalil-tavarez-85974b142">LinkedIn</a></p>
+
+      <body onload="createMap();">
+      <h1>Some Important Places to Me</h1>
+      <div id="map"></div>
+      <p>Rit: My current College</p>
+
+      <form action="/text" method="POST">
+      <textarea name="text-input">Comment here</textarea>
+      <input type="submit" />
+      </form>
     </div>
   </body>
 </html>
