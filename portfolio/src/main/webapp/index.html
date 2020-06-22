@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html>
+  <style>
+  body {
+    
+    background-color: white;
+    color: black;
+    
+    }
+
+  .dark-mode {
+    background-color: black;
+    color: white;
+    }
+  </style> 
+
   <head>
     <meta charset="UTF-8">
     <title>My Portfolio</title>
@@ -11,7 +25,13 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
+
   <body>
+    <h2>Toggle Dark/Light Mode</h2>
+    <p>Click the button to toggle between dark and light mode for this page.</p>
+
+    <button onclick="darkModeFunction()">Toggle dark mode</button>  
+     
     <div id="content">
       <h1>Khalil's Portfolio</h1>
       <p>This is my portfolio. There maybe others like it but this one is mine</p>
@@ -45,9 +65,9 @@
       <p><a href="www.linkedin.com/in/khalil-tavarez-85974b142">LinkedIn</a></p>
 
       <body onload="createMap();">
-      <h1>Hello Google Maps</h1>
+      <h1>Some Important Places to Me</h1>
       <div id="map"></div>
-      <p>Yep map</p>
+      <p>Rit: My current College</p>
 
       <form action="/text" method="POST">
       <textarea name="text-input">Comment here</textarea>
